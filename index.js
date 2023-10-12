@@ -13,8 +13,27 @@ function getComputerChoice(){
 console.log(getComputerChoice())
 
 function playRound(playerSelection, computerSelection){
-    console.log(playerSelection);
-    return "You Lose! Paper beats Rock";
+    if (playerSelection === "Rock" && computerSelection === "Paper"){
+        return "You Lose! Paper beats Rock";
+    }
+    else if(playerSelection === "Rock" && computerSelection === "Scissors"){
+        return "You Win! Rock beats Scissors";
+    }
+    else if(playerSelection === "Scissors" && computerSelection === "Paper"){
+        return "You Win! Scissors beats Paper";
+    }
+    else if(playerSelection === "Scissors" && computerSelection === "Rock"){
+        return "You Lose! Rock beat Scissors";
+    }
+    else if(playerSelection === "Paper" && computerSelection === "Rock"){
+        return "You Win! Paper beats Rock";
+    }
+    else if(playerSelection === "Paper" && computerSelection === "Scissors"){
+        return "You Lose! Scissors beats Paper";
+    }
+    else if(playerSelection === computerSelection){
+        return "You Tie! Play Again! ";
+    }
 }
 
 function capitalize(str){
@@ -22,6 +41,10 @@ function capitalize(str){
     return str.charAt(0).toUpperCase() + lower.slice(1);
 }
 
-const playerSelection = capitalize("RoCk")
+function game(){
+
+}
+const playerSelection = capitalize("paper")
+console.log(playerSelection)
 const computerSelection = getComputerChoice()
 console.log(playRound(playerSelection, computerSelection))
