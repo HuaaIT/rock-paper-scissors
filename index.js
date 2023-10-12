@@ -10,7 +10,6 @@ function getComputerChoice(){
         return "Scissors";
     }
 }
-console.log(getComputerChoice())
 
 function playRound(playerSelection, computerSelection){
     if (playerSelection === "Rock" && computerSelection === "Paper"){
@@ -42,9 +41,11 @@ function capitalize(str){
 }
 
 function game(){
-
+    console.log(getComputerChoice())
 }
-const playerSelection = capitalize("paper")
+console.log(game())
+let input = prompt("Enter your rock paper or scissors")
+const playerSelection = capitalize(input)
 console.log(playerSelection)
 const computerSelection = getComputerChoice()
 console.log(playRound(playerSelection, computerSelection))
